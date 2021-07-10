@@ -29,8 +29,16 @@ function createNewProduct(req, res) {
     //console.log(req.body.Price);
     res.end(JSON.stringify(req.body));
     //res.render("product-new", { title: "Create a New Product" });
+    let newProducts = new Product({
+        ProductName: req.body.ProductName,
+        ProductCode: req.body.ProductCode,
+        Information: req.body.Information,
+        Price: req.body.Price,
+        Unit: req.body.Unit,
+        ImgLink: req.body.ImgLink 
+    });
+    newProducts.save();
 }
-
 
 /// - reEDIT --> Update
 router.get("/edit", getEditProduct);
