@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+{{>head title=this.title subpage='Page X' }}
+
+<body>
+    {{>header  title=this.title}}
+
+    <main>
+        <ol>
+            <div class="container">
+            <h1>&#x2728;{{title}} &#x2728;</h1>
+            <div id="searchWrapper">
+                <input
+                    type="text"
+                    name="searchBar"
+                    id="searchBar"
+                    placeholder="search for a product"
+                />
+            </div>
+            {{#each product}}
+            <li style="display:inline-block">
+                <div class="card">
+                    <H2>{{ProductName}}</H2>
+                    <img class="productimg" style="height: 300px; width: 350px" src="/{{ImgLink}}">
+                    <H3 class="price">Giá: {{Price}}</H3>
+                    <BR> Thông tin sản phẩm
+                    <p>
+                        {{Information}}
+                    </p>
+                    <BR> Unit: {{Unit}}
+                    <p><button>Add to Cart</button></p>
+                </div>
+            </li>
+            {{/each}}
+        </div>
+        <script src="Products.js"></script>
+            <br>
+        </ol>
+    </main>
+    
+
+    {{>footer}}
+</body>
+
+</html>
